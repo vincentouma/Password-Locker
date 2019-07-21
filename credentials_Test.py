@@ -80,4 +80,14 @@ class TestCredentials(unittest.TestCase):
         test_cred = Credentials("Twitter", "testuser","password")
         test_cred.save_cred()
         cred_exists = Credentials.cred_exists("Twitter")
-        self.assertTrue(cred_exists)    
+        self.assertTrue(cred_exists)
+
+
+        #################test 12th########Display credentials###########
+
+        
+    def test_display_credentials(self):
+        '''
+        test if all credentials can be displayed
+        '''
+        self.assertEqual(Credentials.display_cred(), Credentials.cred_list)        

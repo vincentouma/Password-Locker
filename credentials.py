@@ -50,3 +50,13 @@ class Credentials:
             if cred.account == account:
                 return True
         return False            
+
+
+        #################Display credentials################
+
+    @classmethod
+    def display_cred(cls):
+        '''
+        method that returns all credentials
+        '''
+        return cls.cred_list    
