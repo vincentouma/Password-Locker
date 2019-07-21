@@ -1,6 +1,6 @@
 import unittest
 from credentials import Credentials
-
+import pyperclip
 
 class TestCredentials(unittest.TestCase):
 
@@ -90,4 +90,16 @@ class TestCredentials(unittest.TestCase):
         '''
         test if all credentials can be displayed
         '''
-        self.assertEqual(Credentials.display_cred(), Credentials.cred_list)        
+        self.assertEqual(Credentials.display_cred(), Credentials.cred_list)
+
+
+
+        #########copy password#########test 13th#####
+
+    def test_copy_password(self):
+        '''
+        test whether generated password can be copied
+        '''
+        self.new_cred.save_cred()
+        Credentials.copy_passlock("Jerotich")
+        self.assertEqual(self.new_cred.passlock, pyperclip.paste())            
