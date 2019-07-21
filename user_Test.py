@@ -8,7 +8,8 @@ class TestUser(unittest.TestCase):
         '''
         method to run before each test
         '''
-        self.new_user = User("vincentouma", "vinceobindi1005") #new User created
+        self.new_user=User("vincentouma", "vinceobindi1005") #new User created
+
     def tearDown(self):
         '''
         clean up after each test to prevent errors
@@ -21,6 +22,9 @@ class TestUser(unittest.TestCase):
         '''
         self.assertEqual(self.new_user.username, "vincentouma")
         self.assertEqual(self.new_user.password, "vinceobindi1005")
+
+
+
     def test_save_user(self):
         '''
         check whether the user information can be saved 
@@ -28,6 +32,18 @@ class TestUser(unittest.TestCase):
         '''
         self.new_user.save_user()
         self.assertEqual(len(User.user_list), 1)
+
+        ##############3rd test#####save multiple users#####
+
+    def test_save_mutliple_users(self):
+        '''
+        check whether you can store more than one user
+        '''
+        self.new_user.save_user()
+        test_user = User("test", "password")
+        test_user.save_user()
+        self.assertEqual(len(User.user_list), 2)
+
 if __name__ == '__main__':
   unittest.main()
 
