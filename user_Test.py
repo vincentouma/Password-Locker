@@ -16,6 +16,8 @@ class TestUser(unittest.TestCase):
         '''
         User.user_list = []
 
+        ########2nd test########
+
     def test__init(self):
         '''
         check if class is initialiazing as expected

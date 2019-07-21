@@ -10,3 +10,12 @@ class Credentials:
         self.account = account
         self.email = email
         self.passlock = passlock
+
+
+        #########save credentials##########
+
+    def save_cred(self):
+        '''
+        self credentials in cred_list
+        '''
+        Credentials.cred_list.append(self)
