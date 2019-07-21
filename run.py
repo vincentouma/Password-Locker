@@ -73,112 +73,112 @@ def delete_cred(account):
 
 
 
-# def main():
-#     # Dealing user class first
-#     print("Hello! Welcome to Password Locker! Please Key in your name:  ")
-#     name = input ()
-#     print(f"Hey {name}, please create an account to access Password Locker")
-#     print('\n')
-#     print("*" * 80)
-#     print("Reply with these short codes : cc - create a new account,  ex -exit ")
-#     print("*" * 80)
+def main():
+    # Dealing user class first
+    print("Hello! Welcome to Password Locker! Please Key in your name:  ")
+    name = input ()
+    print(f"Hey {name}, please create an account to access Password Locker")
+    print('\n')
+    print("*" * 80)
+    print("Reply with these short codes : cc - create a new account,  ex -exit ")
+    print("*" * 80)
 
-#     while True:
-#         short_code = input().lower()
+    while True:
+        short_code = input().lower()
 
-#         if short_code == 'cc':
-#             print("Creating account...")
-#             print("Key in these details:")
-#             print("Username: ")
-#             username = input()
+        if short_code == 'cc':
+            print("Creating account...")
+            print("Key in these details:")
+            print("Username: ")
+            username = input()
 
-#             print("Password: ")
-#             password = input()
+            print("Password: ")
+            password = input()
 
-#             save_user(create_useraccount(username, password))
-#             print('\n')
-#             print(f"{name}'s Account information: ")
-#             print(f"Username: {username} , Password:{password}")
-#             print('\n')
-#             print(f"Logged in. Welcome {username}!")
-#             print("*" * 80)
-#             #working with creddata now
-#             print("Use these short codes : ca - create a new account, da - display accounts, fa -find an account, gp - generate a random password , ex -exit the contact list ")
-#             print("*" * 80)
+            save_user(create_useraccount(username, password))
+            print('\n')
+            print(f"{name}'s Account information: ")
+            print(f"Username: {username} , Password:{password}")
+            print('\n')
+            print(f"Logged in. Welcome {username}!")
+            print("*" * 80)
+            #working with creddata now
+            print("Use these short codes : ca - create a new account, da - display accounts, fa -find an account, gp - generate a random password , ex -exit the contact list ")
+            print("*" * 80)
 
-#         elif short_code == "ca":
-#             print("Enter account details: ")
-#             print("Account Company(e.g:Facebook): ")
-#             account = input()
-#             print("Email: ")
-#             email = input()
+        elif short_code == "ca":
+            print("Enter account details: ")
+            print("Account Company(e.g:Facebook): ")
+            account = input()
+            print("Email: ")
+            email = input()
         
-#             print("Would you like a generated password?")
-#             if input()=="yes":
-#                 letters= "abcdefghijklmnopqrstuvwxyz01234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()?"
-#                 how_many = len(letters)
-#                 print("How long would you like your password to be? ")
-#                 print(f"p.s: Maximum length of password is {how_many}")
-#                 lent = int(input())
-#                 passlock = "".join(random.sample(letters, lent))
-#                 print(f"Your password has {lent} characters ")
-#                 print(passlock)
-#                 save_cred(create_credentials(account, email, passlock))
-#                 print("Credentials saved! Enter 'da' to see account")
-#                 print("*" * 80)
-#                 print("Use these short codes : ca - create a new account, da - display accounts, fa -find an account, gp - generate a random password , ex -exit the contact list ")
-#                 print("*" * 80)
-#             elif input == "no":
-#                 print("Password: ")
-#                 passlock = input()   
-#                 save_cred(create_credentials(account, email, passlock))
-#                 print("Credentials saved! Enter 'da' to see account")
-#                 print("*" * 80)
-#                 print("Use these short codes : ca - create a new account, da - display accounts, fa -find an account, gp - generate a random password , ex -exit the contact list ")
-#                 print("*" * 80)
-#             else:
-#                 print("i dont get it please use shortcode 'ca' and start again")
+            print("Would you like a generated password?")
+            if input()=="yes":
+                letters= "abcdefghijklmnopqrstuvwxyz01234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()?"
+                how_many = len(letters)
+                print("How long would you like your password to be? ")
+                print(f"p.s: Maximum length of password is {how_many}")
+                lent = int(input())
+                passlock = "".join(random.sample(letters, lent))
+                print(f"Your password has {lent} characters ")
+                print(passlock)
+                save_cred(create_credentials(account, email, passlock))
+                print("Credentials saved! Enter 'da' to see account")
+                print("*" * 80)
+                print("Use these short codes : ca - create a new account, da - display accounts, fa -find an account, gp - generate a random password , ex -exit the contact list ")
+                print("*" * 80)
+            elif input == "no":
+                print("Password: ")
+                passlock = input()   
+                save_cred(create_credentials(account, email, passlock))
+                print("Credentials saved! Enter 'da' to see account")
+                print("*" * 80)
+                print("Use these short codes : ca - create a new account, da - display accounts, fa -find an account, gp - generate a random password , ex -exit the contact list ")
+                print("*" * 80)
+            else:
+                print("i dont get it please use shortcode 'ca' and start again")
 
-#         elif short_code == "da":
-#             print(f"These are your accounts {name}:")
-#             print("*" * 30)
-#             for cred in display_cred():
-#                 print(f"{cred.account} {cred.email} {cred.passlock}")
-#             else:
-#                 print("*" * 30)
-#                 print("If empty, you do not have any accounts saved")
+        elif short_code == "da":
+            print(f"These are your accounts {name}:")
+            print("*" * 30)
+            for cred in display_cred():
+                print(f"{cred.account} {cred.email} {cred.passlock}")
+            else:
+                print("*" * 30)
+                print("If empty, you do not have any accounts saved")
 
-#         elif short_code == "fa":
-#             print("Key in  the account you are searching for (ie.'Facebook'): " )
-#             search_cred= input()
-#             if find_account(search_cred):
-#                 search_acc = find_account(search_cred)
-#                 print(f"{search_acc.account} {search_acc.email} { search_acc.passlock}")
-#             else: print("This account does not exist")
+        elif short_code == "fa":
+            print("Key in  the account you are searching for (ie.'Facebook'): " )
+            search_cred= input()
+            if find_account(search_cred):
+                search_acc = find_account(search_cred)
+                print(f"{search_acc.account} {search_acc.email} { search_acc.passlock}")
+            else: print("This account does not exist")
             
-#         elif short_code == "gp":
-#                 letters= "abcdefghijklmnopqrstuvwxyz01234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()?"
-#                 how_many = len(letters)
-#                 print("How long would you like your password to be? ")
-#                 print(f"p.s: Maximum length of password is {how_many}")
-#                 lent = int(input())
-#                 password = "".join(random.sample(letters, lent))
-#                 print(f"Your password has {lent} characters ")
-#                 print(password)
+        elif short_code == "gp":
+                letters= "abcdefghijklmnopqrstuvwxyz01234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()?"
+                how_many = len(letters)
+                print("How long would you like your password to be? ")
+                print(f"p.s: Maximum length of password is {how_many}")
+                lent = int(input())
+                password = "".join(random.sample(letters, lent))
+                print(f"Your password has {lent} characters ")
+                print(password)
                 
             
 
-#         elif short_code == 'ex':
-#             print("*"*30)
-#             print("logging out...")
-#             print('\n')
-#             print('\n')
-#             print("logged out")
-#             print("*"*30)
-#             break
+        elif short_code == 'ex':
+            print("*"*30)
+            print("logging out...")
+            print('\n')
+            print('\n')
+            print("logged out")
+            print("*"*30)
+            break
 
 
-        # else:
+        else:
             print("Invalid, please  use these short codes : ca - create a new account, da - display accounts, fa -find an account, de- delete account , gp - generate a random password , ex -logout")
 if __name__ == '__main__':
     main()  
