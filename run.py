@@ -109,14 +109,14 @@ def main():
 
         elif short_code == "ca":
             print("Enter account details: ")
-            print("Account Name(e.g:Facebook): ")
+            print("Account Name(e.g:Slack): ")
             account = input()
             print("Email: ")
             email = input()
         
             print("Would you like a generated password?")
             if input()=="yes":
-                letters= "abcdefghijklmnopqrstuvwxyz01234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()?"
+                letters= "ghijklmnopqrstuvwxyz0123456789FGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()?"
                 how_many = len(letters)
                 print("How long would you like your password to be? ")
                 print(f"p.s: Maximum length of password is {how_many}")
