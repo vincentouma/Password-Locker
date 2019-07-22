@@ -19,6 +19,14 @@ def save_user(user):
     '''
     user.save_user()
 
+def save_credentials(credentials):
+
+    '''
+    method save credentials  account
+    '''
+
+    credentials.save_credentials
+
 
     ######search user########
 
@@ -129,9 +137,9 @@ def main():
                 print("*" * 80)
                 print("Use these short codes : ca - create a new account, da - display accounts, fa -find an account, gp - generate a random password , ex -exit the contact list ")
                 print("*" * 80)
-            elif input == "no":
+            elif input() == "no":
                 print("Password: ")
-                input()== " "
+                passlock=input()
                 save_cred(create_credentials(account, email, passlock))
                 print("Credentials saved! Enter 'da' to see account")
                 print("*" * 80)
@@ -139,7 +147,7 @@ def main():
                 print("*" * 80)
 
                 save_user(create_credentials(account, email,passlock)) # create and save new passlock.
-
+                save_credentials(create_credentials(account, email,passlock))
                 print ('\n')
                 print(f"New User {account} {email} created")
                 print ('\n')

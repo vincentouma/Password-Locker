@@ -16,9 +16,9 @@ search account
 generate password
 
 ## Project setup instructions
-Git clone https://github.com/vincentouma/Password-Locker.git
-Navigate to the folder using teminal
-Run the file ./run to manage your password.
+- Git clone https://github.com/vincentouma/Password-Locker.git
+- Navigate to the folder using teminal
+- Run the file ./run to manage your password.
 
 
 
