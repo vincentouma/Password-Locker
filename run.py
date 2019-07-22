@@ -131,7 +131,7 @@ def main():
                 print("*" * 80)
             elif input == "no":
                 print("Password: ")
-                passlock = input()   
+                input()== " "
                 save_cred(create_credentials(account, email, passlock))
                 print("Credentials saved! Enter 'da' to see account")
                 print("*" * 80)
