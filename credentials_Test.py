@@ -101,5 +101,5 @@ class TestCredentials(unittest.TestCase):
         test whether generated password can be copied
         '''
         self.new_cred.save_cred()
-        Credentials.copy_passlock("Jerotich")
+        Credentials.copy_passlock("vinceobindi1005")
         self.assertEqual(self.new_cred.passlock, pyperclip.paste())            

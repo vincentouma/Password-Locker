@@ -75,7 +75,7 @@ def delete_cred(account):
 
 def main():
     # Dealing user class first
-    print("Hello! Welcome to Password Locker! Please enter your name:  ")
+    print("Welcome to Password Locker! Please enter your name:  ")
     name = input ()
     print(f"{name}, Sign up to continue")
     print('\n')
@@ -137,14 +137,22 @@ def main():
                 print("*" * 80)
                 print("Use these short codes : ca - create a new account, da - display accounts, fa -find an account, gp - generate a random password , ex -exit the contact list ")
                 print("*" * 80)
+
+                save_user(create_credentials(account, email,passlock)) # create and save new passlock.
+
+                print ('\n')
+                print(f"New User {account} {email} created")
+                print ('\n')
+
+
             else:
                 print("i dont get it please use shortcode 'ca' and start again")
 
         elif short_code == "da":
-            print(f"These are your accounts {name}:")
+            print(f"These are your credentials for {name}:")
             print("*" * 30)
             for cred in display_cred():
-                print(f"{cred.account} {cred.email} {cred.passlock}")
+                print(f"{cred.account}\n {cred.email}\n {cred.passlock}")
             else:
                 print("*" * 30)
                 print("If empty, you do not have any accounts saved")
