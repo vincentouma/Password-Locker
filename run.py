@@ -75,12 +75,12 @@ def delete_cred(account):
 
 def main():
     # Dealing user class first
-    print("Hello! Welcome to Password Locker! Please Key in your name:  ")
+    print("Hello! Welcome to Password Locker! Please enter your name:  ")
     name = input ()
-    print(f"Hey {name}, please create an account to access Password Locker")
+    print(f"{name}, Sign up to continue")
     print('\n')
     print("*" * 80)
-    print("Reply with these short codes : cc - create a new account,  ex -exit ")
+    print("Reply with  : cc - Sign Up,  ex -exit ")
     print("*" * 80)
 
     while True:
@@ -102,13 +102,14 @@ def main():
             print('\n')
             print(f"Logged in. Welcome {username}!")
             print("*" * 80)
-            #working with creddata now
+            
+            #working with credentials now###
             print("Use these short codes : ca - create a new account, da - display accounts, fa -find an account, gp - generate a random password , ex -exit the contact list ")
             print("*" * 80)
 
         elif short_code == "ca":
             print("Enter account details: ")
-            print("Account Company(e.g:Facebook): ")
+            print("Account Name(e.g:Facebook): ")
             account = input()
             print("Email: ")
             email = input()
